@@ -7,6 +7,7 @@ class Plugins(info: ProjectInfo) extends PluginDefinition(info) {
   // -------------------------------------------------------------------------------------------------------------------
   object Repositories {
     val akkaRepo = MavenRepository("Akka Repository", "http://akka.io/repository")
+    val sbtIdeaRepo = MavenRepository("sbt-idea Repository", "http://mpeltonen.github.com/maven")
   }
   
   // -------------------------------------------------------------------------------------------------------------------
@@ -17,10 +18,11 @@ class Plugins(info: ProjectInfo) extends PluginDefinition(info) {
   // -------------------------------------------------------------------------------------------------------------------
   import Repositories._
   lazy val akkaModuleConfig = ModuleConfiguration("se.scalablesolutions.akka", akkaRepo)
+  lazy val sbtIdeaModuleConfig = ModuleConfiguration("com.github.mpeltonen", sbtIdeaRepo)
 
   // -------------------------------------------------------------------------------------------------------------------
   // Plugins
   // -------------------------------------------------------------------------------------------------------------------
   val akkaPlugin = "se.scalablesolutions.akka" % "akka-sbt-plugin" % "1.0"
-  
+  val sbtIdea = "com.github.mpeltonen" % "sbt-idea-plugin" % "0.4.0"
 }

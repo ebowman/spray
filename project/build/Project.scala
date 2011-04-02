@@ -1,7 +1,7 @@
 import sbt._
 import java.io.File
 
-class Project(info: ProjectInfo) extends DefaultProject(info) with AkkaProject {
+class Project(info: ProjectInfo) extends DefaultProject(info) with AkkaProject with IdeaProject {
   
   // -------------------------------------------------------------------------------------------------------------------
   // Dependencies
